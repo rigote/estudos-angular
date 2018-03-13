@@ -9,28 +9,27 @@ import { Coracao } from '../shared/coracao.model'
 })
 export class TentativasComponent implements OnInit, OnChanges {
 
-  @Input() public tentativas: number
+  @Input() public tentativas: number;
 
   public coracoes: Coracao[] = [
     new Coracao(true),
     new Coracao(true),
     new Coracao(true)
-  ]
+  ];
 
   constructor() {
-    
+
   }
 
   ngOnChanges() {
-    if(this.tentativas !== this.coracoes.length) {
-      let indice = this.coracoes.length - this.tentativas
-      this.coracoes[indice - 1].cheio = false
+    if (this.tentativas !== this.coracoes.length) {
+      let indice = this.coracoes.length - this.tentativas;
+      this.coracoes[indice - 1].cheio = false;
     }
-    console.log('Tentativas recebidas do painel', this.tentativas)
   }
 
   ngOnInit() {
-    
+
   }
 
 }
